@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import logo from './logo.svg'
-import './components/navBar/Navbar'
+import Navbar from './components/navBar/Navbar'
 import './App.css'
-
+import ItemListContainer from './components/ItemListContainer';
 function App() {
   /*const [count, setCount] = useState(0)
 
@@ -42,7 +42,8 @@ function App() {
     </div>*/
     return(
       <>
-      <navBar />
+      <Navbar />
+      <ItemListContainer />
       </>
   );
 }

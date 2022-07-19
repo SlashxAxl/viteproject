@@ -1,14 +1,17 @@
 import React from 'react'
+import CartWidget from '../CartWidget'
 
-const navBar = () => {
-    return(
-        <div>
-            <button className="navBar_button">Menú</button>
-            <button className="navBar_button">Productos</button>
-            <button className="navBar_button">Sobre Nosotros</button>
-            <button className="navBar_button">Preguntas Frecuentes</button>
-        </div>
-    )
+const Navbar = () => {
+  return (
+    <div>
+        <button>Inicio</button>
+        <button>Productos</button>
+        <button>Promociones</button>
+        <button>Sobre Nosotros</button>
+        <button>Soporte al Cliente</button>
+        <CartWidget/>
+    </div>
+  )
 }
 
-export default navBar
+export default Navbar
