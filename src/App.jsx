@@ -1,9 +1,10 @@
 import { useState } from 'react'
 import logo from './logo.svg'
+import './components/navBar/Navbar'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  /*const [count, setCount] = useState(0)
 
   return (
     <div className="App">
@@ -38,8 +39,12 @@ function App() {
           </a>
         </p>
       </header>
-    </div>
-  )
+    </div>*/
+    return(
+      <>
+      <navBar />
+      </>
+  );
 }
 
 export default App
