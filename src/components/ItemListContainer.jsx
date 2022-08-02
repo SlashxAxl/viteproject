@@ -1,16 +1,27 @@
-import React from 'react'
-import Catalogue from './Catalogue'
+import React, { useEffect, useState } from 'react'
 import ItemList from './ItemList'
 
-const ItemListContainer = () => {
-  return (
-    <>
-    <h1>Catálogo</h1>
-    <Catalogue producto='Xbox Series X' descripcion='Consola de videojuegos'/>
-    <Catalogue producto='Playstation 5' descripcion='Consola de videojuegos' />
-    <Catalogue producto='Nintendo Switch' descripcion='Consola de videojuegos' />
-    </>
-  )
-}
+export default function ItemListContainer (){
+  const [productos, setProductos] = useState([])
+  useEffect(()=>{
+    let productos = [
+      {id: 100, name: "Xbox Series X"},
+      {id: 101, name: "PlayStation 5"},
+      {id: 102, name: "Nintendo Switch Oled"}
+    ]
+  
+    const promesaProductos = new Promise((res) => {
+      setTimeout(() => {
+        res(productos)
+      }, 2000);
+    })
 
-export default ItemListContainer
+    
+    promesaProductos.then((resultado)=>{
+      setProductos(resultado)
+    })
+  },[])
+  
+  return<> 
+  <ItemList productos={productos}/></>
+}

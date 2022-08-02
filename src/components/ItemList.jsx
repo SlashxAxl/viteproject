@@ -1,14 +1,10 @@
 import React from 'react'
-import datos from './Item'
+import Item from './Item'
 
-const ItemList = () => {
-  return new Promise ((resolve,)=>{
-    setTimeout(()=>{
-        resolve(datos)
-    },2000)
-  })
+export default function ItemList ({productos}){
+  return<>
+  {productos.map((producto)=>(
+  <Item key={producto.id} producto={producto}/>
+  ))}
+  </>
 }
-
-ItemList().then((datos)=>console.log(datos))
-
-export default ItemList

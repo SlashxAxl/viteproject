@@ -1,33 +1,15 @@
-/*import React from 'react'
-import ItemList from './ItemList'
+import React from "react"
+import SimpleStateFuncion from "./ItemCount"
+import ItemDetail from "./ItemDetail"
+import ItemDetailContainer from "./ItemDetailContainer"
 
-const Item = () => {
-  return (
-    <>
-    <div>Item</div>
-    <ItemList marca='Microsoft' lanzamiento='2020' version='Standard' />
-    <ItemList marca='Sony' lanzamiento='2020' version='Standard'/>
-    <ItemList marca='Nintendo' lanzamiento='2018' version='Oled'/>
-    </>
-  )
+export default function Item({producto}){
+  return <>
+  <div>
+    {JSON.stringify(producto)}
+    <SimpleStateFuncion/>
+    <button onClick={<ItemDetailContainer/>}>Mostrar detalles del producto</button>
+  </div>
+  </>
 }
 
-export default Item*/
-const datos=[{
-    id: 284429,
-    marca:'Microsoft',
-    lanzamiento: 2020,
-    version: 'Standard'
-},{
-    id:684268,
-    marca:'Sony',
-    lanzamiento:2020,
-    version:'Standard'
-},{
-    id:348984,
-    marca:'Nintendo',
-    lanzamiento:2018,
-    version:'Oled'
-}]
-
-export default datos
