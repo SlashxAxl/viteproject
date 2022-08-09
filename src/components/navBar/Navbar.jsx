@@ -7,11 +7,11 @@ const Navbar = () => {
     <div>
         <Link to={"/"}>Ir a Home</Link>
         <br />
-        <Link to="/categoria/Videojuegos">Videojuegos</Link>
+        <Link to={"/categoria/Videojuegos"}>Videojuegos</Link>
         <br />
-        <Link to="/categoria/InstrumentosMusicales">Instrumentos Musicales</Link>
+        <Link to={"/categoria/InstrumentosMusicales"}>Instrumentos Musicales</Link>
         <br />
-        <Link to="/categoria/RopayCalzado">Ropa y Calzado</Link>
+        <Link to={"/categoria/RopayCalzado"}>Ropa y Calzado</Link>
         <CartWidget/>
     </div>
   )

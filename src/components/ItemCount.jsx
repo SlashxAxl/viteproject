@@ -1,13 +1,35 @@
-import React, {useState} from "react";
+import React, { useEffect, useState } from 'react'
 
-export default function SimpleStateFuncion(){
-    const [cuenta,setCuenta] = useState(1)
+const ItemCount = ({stock,onAdd}) => {
+    const [count,setCount]=useState(1)
     
-    return(
+    
+    function ClickMas (){
+        if(count < stock){
+            setCount(count + 1)
+        }
+    }
+
+    function ClickMenos(){
+        if(count > 1){
+            setCount(count - 1)
+        }
+    }
+
+    useEffect(()=>{
+
+    },[count])
+
+    return (
+    <div>
         <div>
-            La cuenta es: {cuenta}
-            <button onClick={()=>setCuenta(cuenta + 1)}>+</button>
-            <button onClick={()=>setCuenta(cuenta - 1)}>-</button>
+        <div onClick={ClickMenos}></div>
+        <div>{count}</div>
+        <div onClick={ClickMas}></div>
         </div>
+        <button onClick={()=>onAdd(count)}>Agregar al Carrito</button>
+    </div>
     )
 }
+
+export default ItemCount

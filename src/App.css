@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  text-decoration: none;
 }
 
 .App-logo {
@@ -39,4 +40,9 @@
 
 button {
   font-size: calc(10px + 2vmin);
+}
+
+img{
+  height: 150px;
+  border-radius: 5px;
 }
