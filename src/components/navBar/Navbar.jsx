@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom'
 
 const Navbar = () => {
   return (
-    <div>
+    <div className='navBar'>
         <Link to={"/"}>Ir a Home</Link>
         <br />
         <Link to={"/categoria/Videojuegos"}>Videojuegos</Link>

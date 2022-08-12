@@ -1,11 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import cart from '../components/cart.svg'
+import { BsFillCartFill } from "react-icons/bs";
 
 const CartWidget = () => {
   return (
     <Link to={'/cart'}>
-    <img src={cart} style={{height:30}}/>
+      <BsFillCartFill size={40}/>
     </Link>
   )
 }
