@@ -1,37 +1,15 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import ItemCount from './ItemCount';
 
-export default function ItemDetail({detalleProductos}){
+export default function ItemDetail({product}){
     
-    const [cart1, setCart1] = useState(false);
-  
-    const {addItem} = useCartContext();
-  
-    const onAdd = (count) => {
-      swal({
-          title: "Agregado!",
-          text: `Se agregaron ${count} al carrito!`,
-          icon: "success",
-        })
-      setCart1(true);
-      addItem(detalleProductos, count);
-  }
-  
-
-
-
-    
-
     return(<><div>
-    <img src={detalleProductos.image} />
-    <h1>{detalleProductos.name}</h1>
-    <p>{detalleProductos.description}</p>
-    <p>{detalleProductos.price}</p>
-    {
-              cart1
-                ? <Link to='/cart'><button>Terminar compra</button></Link>
-                : <ItemCount stock={detalleProductos.stock} onAdd={onAdd}/>
-            }
+    <h1>{product.name}</h1>
+    <img src={product.image} />
+    <p>{product.description}</p>
+    <p>${product.price} MXN</p>
     </div>
+    <p>STOCK: {product.stock}</p>
+    <ItemCount product={product}/>
     </>)
 }

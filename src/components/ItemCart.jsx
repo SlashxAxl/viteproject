@@ -1,5 +1,5 @@
 import React from 'react';
-import { useCartContext } from '../context/CartContext';
+import { useCartContext } from '../context/cartContextComponent';
 import { BsFillCartXFill } from 'react-icons/bs';
 
 const ItemCart = ({product}) => {
