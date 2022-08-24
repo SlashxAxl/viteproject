@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from 'react';
+/*import React, { useEffect, useState } from 'react';
 import { useContext } from 'react';
-import { cartContext } from '../context/cartContextComponent';
+import {cartContex} from '../App'
+
 
 const ItemCount = ({product}) => {
 const [count, setCount] = useState(1)
-const {cart, setCart} = useContext(cartContext)
+const cart = useContext(cartContex)
 
 function sum(){
     if(count < product.stock){
@@ -18,8 +19,8 @@ function res(){
     }
 }
 function onAdd() { 
-    //alert('Se agregaron ' + [count] + ' ' + [product.name] + ' a tu carrito!')
-    setCart([...cart,{...product,count:count}])
+    alert('Se agregaron ' + [count] + ' ' + [product.name] + ' a tu carrito!')
+    alert('Se logro agregar ' + JSON.stringify(cart))
 }
     
     return <>
@@ -33,4 +34,4 @@ function onAdd() {
     </>
 }
 
-export default ItemCount 
+export default ItemCount */

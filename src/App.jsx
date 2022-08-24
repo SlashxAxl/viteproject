@@ -6,9 +6,8 @@ import ItemDetailContainer from './components/ItemDetailContainer';
 import Cart from './components/Cart'
 import Checkout from './components/Checkout';
 import { initializeApp } from "firebase/app";
-import cartContextComponent from './context/cartContextComponent';
-
-
+import { useState } from 'react';
+import { createContext } from 'react';
 
 const firebaseConfig = {
   apiKey: "AIzaSyDydMLWeqvtIqtOVFjx0x4I7xBnwE70wEc",
@@ -22,14 +21,13 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-
 function App() {
-  
+  //const [cart, setCart] = useState([{id:100, name:"zapato", count:10}])
+  //const cartContext = createContext()
+  //<cartContext.Provider value={{cart}}></cartContext.Provider>
     return(
       <>
-      <cartContextComponent>
       <BrowserRouter>
-      <CartProvider>
       <Navbar/>
       <br />
       <Routes>
@@ -40,9 +38,7 @@ function App() {
       <Route path='/cart' element={<Cart/>}/>
       <Route path='*' element={<p>404</p>}/>
       </Routes>
-      </CartProvider>
       </BrowserRouter>
-      </cartContextComponent>
       </>
   );
 }
