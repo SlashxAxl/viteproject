@@ -1,11 +1,13 @@
-/*import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useContext } from 'react';
-import {cartContex} from '../App'
+import { cartContext } from '../context/CartContextComponent';
+import {Link} from 'react-router-dom'
 
 
 const ItemCount = ({product}) => {
 const [count, setCount] = useState(1)
-const cart = useContext(cartContex)
+const [removeButton, setRemoveButton] = useState(false)
+const {cart, addToCart} = useContext(cartContext)
 
 function sum(){
     if(count < product.stock){
@@ -19,9 +21,12 @@ function res(){
     }
 }
 function onAdd() { 
-    alert('Se agregaron ' + [count] + ' ' + [product.name] + ' a tu carrito!')
-    alert('Se logro agregar ' + JSON.stringify(cart))
+    addToCart(product, count)
+    setRemoveButton(true)
 }
+useEffect(()=>{
+    console.log(cart)
+},[cart])
     
     return <>
     <div>
@@ -29,9 +34,20 @@ function onAdd() {
         {count}
         <button style={{cursor: "pointer"}} onClick={res}>-</button>
         <br />
-        <button onClick={onAdd}>AGREGAR AL CARRITO</button>
+        {removeButton ?(
+            <>
+            "Producto agregado!"
+            <br />
+            <Link to="/">
+                <button style={{cursor: "pointer"}}>Seguir Comprando</button>
+            </Link>
+            <Link to="/checkout"><button style={{cursor: "pointer"}}>Finalizar Compra</button></Link>
+            </>
+        ) : (
+        <button style={{cursor: "pointer"}} onClick={onAdd}>AGREGAR AL CARRITO</button>
+        )}
     </div>
     </>
 }
 
-export default ItemCount */
+export default ItemCount 

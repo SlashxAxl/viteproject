@@ -1,3 +1,5 @@
+//@ts-check
+
 import Navbar from './components/navBar/Navbar'
 import './App.css'
 import ItemListContainer from './components/ItemListContainer';
@@ -6,8 +8,8 @@ import ItemDetailContainer from './components/ItemDetailContainer';
 import Cart from './components/Cart'
 import Checkout from './components/Checkout';
 import { initializeApp } from "firebase/app";
-import { useState } from 'react';
-import { createContext } from 'react';
+import React from 'react';
+import CartContextComponent from './context/CartContextComponent';
 
 const firebaseConfig = {
   apiKey: "AIzaSyDydMLWeqvtIqtOVFjx0x4I7xBnwE70wEc",
@@ -22,11 +24,11 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 function App() {
-  //const [cart, setCart] = useState([{id:100, name:"zapato", count:10}])
-  //const cartContext = createContext()
-  //<cartContext.Provider value={{cart}}></cartContext.Provider>
+  
+  
     return(
       <>
+      <CartContextComponent>
       <BrowserRouter>
       <Navbar/>
       <br />
@@ -39,6 +41,7 @@ function App() {
       <Route path='*' element={<p>404</p>}/>
       </Routes>
       </BrowserRouter>
+      </CartContextComponent>
       </>
   );
 }

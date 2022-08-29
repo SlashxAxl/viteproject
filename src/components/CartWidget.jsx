@@ -1,11 +1,15 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
-import { BsFillCartFill } from "react-icons/bs";
+import { useContext } from 'react';
+import { cartContext } from '../context/CartContextComponent';
+import CARTGIF from '../components/cartGif/CARTGIF.gif'
+
 
 const CartWidget = () => {
+  const {total} = useContext(cartContext)
   return (
     <Link to={'/cart'}>
-      <BsFillCartFill size={40}/>
+      <img src={CARTGIF}/>
+      {total}
     </Link>
   )
 }
