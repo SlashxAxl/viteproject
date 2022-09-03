@@ -36,7 +36,7 @@ useEffect(()=>{
         <br />
         {removeButton ?(
             <>
-            "Producto agregado!"
+            <p className='addedProduct'> "Producto agregado!"</p>
             <br />
             <Link to="/">
                 <button style={{cursor: "pointer"}}>Seguir Comprando</button>

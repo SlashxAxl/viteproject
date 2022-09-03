@@ -30,7 +30,10 @@ const {Categoria} = useParams()
   
   },[Categoria])
   
-  return(<ItemList productos={products}/>
+  return(
+  <div className='listContainer'>
+  <ItemList productos={products}/>
+  </div>
   )
 
 }

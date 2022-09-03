@@ -23,12 +23,12 @@ export default function Checkout() {
 }
 if(cart.length == 0){
   return(<>
-  <img src={CARRITOVACIO} />
+  <img className='carritoVacioImg' src={CARRITOVACIO} />
   </>)
 }
   return (<>
-    {orderId ? ("Gracias por tu compra! Esperamos que vuelvas pronto! Tu Orden de compra es: " + setOrderId ) : (
-    <div>
+    {orderId ? "Gracias por tu compra! Esperamos que vuelvas pronto! Tu Orden de compra es: " + setOrderId  : (
+    <div className='dataForm'>
       <h1>Ingresa tus datos para el envio de tus productos</h1>
       <input type="text" placeholder='Ingresa tu nombre' onChange={(e) => setName(e.target.value)} /> <br />
       <input type="tel" placeholder='Ingresa tu numero celular' onChange={(e) => setCellphone(e.target.value)} /> <br />

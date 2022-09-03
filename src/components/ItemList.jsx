@@ -9,6 +9,6 @@ export default function ItemList ({productos}){
   {productos.map((producto)=>(
   <Item key={producto.id} producto={producto}/>
   ))}
-  
+  <br />
   </>
 }

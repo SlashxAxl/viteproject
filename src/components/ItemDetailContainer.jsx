@@ -24,7 +24,9 @@ const {id} = useParams()
   },[id])
   
   return(<>
+    <div className='detailContainer'>
     <ItemDetail product={product}/>
+    </div>
   </>
   )
 

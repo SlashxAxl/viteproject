@@ -1,15 +1,193 @@
+/*--------GENERAL CONGIF-----------*/
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-button {
-  font-size: calc(10px + 2vmin);
-  background-color: brown;
+body{
+  background-image: url('./components/cartGif/MARIOCLOUDS.gif');
+  background-position: center;
+  background-size: cover;
+  align-items: center;
 }
 
-img{
-  height: 150px;
+.carritoImg{
+  height: 30px;
+}
+.navBar{
+  background-color: cadetblue;
+
+}
+.navBar ul{
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;
+  font-family: sans-serif;
+  font-size:large;
+}
+
+.navBar ul li:hover{
+  background-color: rgb(243, 237, 237);
+  color: black;
+  font: bolder;
   border-radius: 5px;
+  text-decoration: none;
+}
+
+:link, :active, :visited{
+  text-decoration: none;
+  color: #000000;
+}
+
+.carritoVacioImg{
+  border-radius: 7px;
+  width: 500px;
+  display: block;
+  margin: auto;
+}
+/*----HOME----*/
+.listContainer{
+  display: grid;
+  flex-direction: row;
+  grid-template-columns: repeat(3,auto);
+  grid-template-rows: repeat(2,auto);
+}
+.productImage{
+  grid-area: productImage;
+  justify-items: center;
+}
+.productCard img{
+  display: block;
+  margin: auto;
+  width:200px;
+  height: 200px;
+  align-items: center;
+  align-content: center;
+  align-self: center;
+  border-radius: 5px;
+  object-fit: cover;
+}
+.productName{
+  grid-area: productName;
+  font-size: 20px;
+}
+.productPrice{
+  grid-area: productPrice;
+  font-weight: bold;
+  font-family:'Times New Roman';
+}
+.buttonPay{
+  grid-area: buttonPay;
+  background-color: cornflowerblue;
+  border-radius: 4px;
+  font-weight: bold;
+  font-family: 'Franklin Gothic Medium';
+}
+.productCard{
+  box-shadow: 10;
+  border-radius: 10px;
+  background-color: aliceblue;
+  display: grid;
+  flex-direction: row;
+  align-items: center;
+  grid-template-areas:
+  "productName"   
+  "productImage"
+  "productPrice"
+  "buttonPay";
+  grid-template-columns: repeat(1,1fr) ;
+  grid-template-rows: repeat(4,auto);
+  text-align: center;
+  align-items: center;
+  align-self: center;
+  margin: auto;
+  padding: auto;
+  border-color: black;
+  border-style: double;
+}
+.detalleCarrito{
+  align-content: center;
+}
+/**********DETAIL***************/
+.addedProduct{
+  font-size: large;
+  font-weight: bold;
+}
+.detailContainerCard{
+  background-color: rgb(68, 97, 122);
+  border-style: double;
+  border-color: #000000;
+}
+
+.detailContainer{
+  display: grid;
+  flex-direction: row;
+  grid-template-columns: repeat(1,1fr);
+  grid-template-rows:repeat(6,auto) ;
+  grid-template-areas: 
+  "productName"
+  "detailImage"
+  "productDescription"
+  "productPrice";
+  text-align: center;
+  align-items: center;
+  align-self: center;
+  margin: auto;
+  padding: auto;
+}
+.detailImage{
+  display: block;
+  margin: auto;
+  width:200px;
+  height: 200px;
+  border-radius: 5px;
+  object-fit: cover;
+}
+.detailCartImage{
+  display: block;
+  margin: auto;
+  width:200px;
+  height: 200px;
+  border-radius: 5px;
+  object-fit: cover;
+  grid-area: productCartImage;
+}
+.detailCart{
+  display: grid;
+  flex-direction: row;
+  grid-template-columns: repeat(1,1fr);
+  grid-template-rows:repeat(4,auto) ;
+  grid-template-areas: 
+  "productCartImage"
+  "productCount"
+  "deleteProduct"
+  "productPay"
+  "buttonFC";
+  text-align: center;
+  align-items: center;
+  align-self: center;
+  margin: auto;
+  padding: auto;
+}
+.productPay{
+  grid-area: productPay;
+  font-weight: bold;
+}
+.deleteProduct{
+  width: 20px;
+  grid-area: deleteProduct;
+}
+.productCount{
+  grid-area: productCount;
+  font-weight: bold;
+}
+.buttonFC{
+  grid-area: buttonFC;
+}
+/********FORM************/
+.dataForm{
+  display: block;
+  margin: auto;
+  align-items: center;
 }
